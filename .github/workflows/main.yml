@@ -44,7 +44,7 @@ jobs:
 
     - name: Before build
       run: |
-        /bin/bash /home/runner/work/openwrt/openwrt/before_build.sh
+        /bin/bash /home/runner/work/openwrt/openwrt/diy.sh
         cp -fpR /home/runner/work/openwrt/openwrt/. /home/runner/openwrt/
 
 #    - name: SSH connection to Actions
@@ -65,10 +65,6 @@ jobs:
         rm -f .config.old
         config_names="$(ls .config*)"
         for i in $config_names;do mv -f $i .config; make defconfig; make -j${make_process}; rm -rf build_dir/target* build_dir/toolchain* staging_dir/target* staging_dir/toolchain*; done
-
-    - name: After build
-      run: |
-        /bin/bash /home/runner/openwrt/after_build.sh
 
     - name: Upload packages
       uses: actions/upload-artifact@master
