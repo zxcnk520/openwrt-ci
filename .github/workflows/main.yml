@@ -39,6 +39,7 @@ jobs:
         # ln -s /mnt/openwrt/dl ./dl
         # ln -s /mnt/openwrt/feeds ./feeds
         # ln -s /mnt/openwrt/staging_dir ./staging_dir
+        echo "======================="
         df -h
 
     - name: Clone source
@@ -79,7 +80,9 @@ jobs:
         df -h
         echo "======================="
         du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
+        echo "======================="
         du -h --max-depth=1 ./build_dir
+        echo "======================="
         du -h --max-depth=1 ./bin
 
     - name: Upload packages
