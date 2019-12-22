@@ -85,6 +85,12 @@ jobs:
         echo "======================="
         du -h --max-depth=1 ./bin
 
+    - name: Check error
+      if: failure()
+      run: |
+        cd /home/runner/openwrt
+        make -j1 V=s
+
     - name: Upload packages
       uses: actions/upload-artifact@master
       with:
