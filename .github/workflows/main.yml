@@ -56,24 +56,19 @@ jobs:
       run: |
         /bin/bash /home/runner/work/openwrt-ci/openwrt-ci/diy.sh
         cp -fpR /home/runner/work/openwrt-ci/openwrt-ci/. /home/runner/openwrt/
+        cd /home/runner/openwrt
+        make defconfig
+        make download -j8
+        find dl -size -1024c -exec rm -f {} \;
 
 #    - name: SSH connection to Actions
 #      uses: csexton/debugger-action@master
-
-    - name: Make download
-      run: |
-        cd /home/runner/openwrt
-        make download -j8
-        find dl -size -1024c -exec rm -f {} \;
 
     - name: Start build
       run: |
         cd /home/runner/openwrt
         let make_process=$(nproc)+1
-        mv .config .config_default
-        rm -f .config.old
-        config_names="$(ls .config*)"
-        for i in $config_names;do mv -f $i .config; make defconfig; make -j${make_process}; rm -rf build_dir/target* build_dir/toolchain* staging_dir/target* staging_dir/toolchain*; done
+        make -j${make_process}
         echo "======================="
         echo "Space usage:"
         echo "======================="

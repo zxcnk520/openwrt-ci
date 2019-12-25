@@ -12,9 +12,3 @@ sed -i "s?cut -c1-2 /sys/class/thermal/thermal_zone0/temp?cut -c1-2 /sys/class/h
 
 echo 'Modify default theme...'
 sed -i "s/luci-theme-bootstrap/luci-theme-argon-mc/g" /home/runner/openwrt/feeds/luci/collections/luci/Makefile
-
-echo 'Fix verysync version'
-sed -i 's/v1.3.0/v1.3.1/g' /home/runner/openwrt/package/zxlhhyccc/verysync/Makefile
-
-# echo "Start build!"
-make defconfig
