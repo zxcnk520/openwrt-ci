@@ -47,7 +47,8 @@ jobs:
         cd /home/runner
         git clone -b dev https://github.com/project-openwrt/openwrt.git
         git clone https://github.com/Lienol/openwrt-package.git
-        sudo chown -R runner:runner openwrt openwrt-package
+        git clone https://github.com/Flowers-in-thorns/luci-app-vssr.git
+        sudo chown -R runner:runner openwrt openwrt-package luci-app-vssr
         cd /home/runner/openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
