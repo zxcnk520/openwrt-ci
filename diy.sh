@@ -12,6 +12,7 @@ rm -rf /home/runner/openwrt/package/lean/luci-theme-argon/
 cp -R /home/runner/luci-theme-argon/ /home/runner/openwrt/package/lean/
 
 echo 'Add luci-app-vssr'
+rm -rf /home/runner/openwrt/package/ctcgfw/luci-app-vssr/
 cp -R /home/runner/luci-app-vssr/ /home/runner/openwrt/package/lean/
 
 echo 'Fix serverchan temperature bug'
