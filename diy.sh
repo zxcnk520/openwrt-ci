@@ -1,15 +1,20 @@
 #!/bin/bash
 cd /home/runner/openwrt
 
-echo 'Update luci-app-passwall & openwrt-chinadns-ng'
+echo 'Update luci-app-passwall & openwrt-chinadns-ng & v2ray'
 rm -rf /home/runner/openwrt/package/lienol/luci-app-passwall/
 rm -rf /home/runner/openwrt/package/ctcgfw/openwrt-chinadns-ng/
+rm -rf /home/runner/openwrt/package/lean/v2ray/
 cp -R /home/runner/openwrt-package/lienol/luci-app-passwall/ /home/runner/openwrt/package/lienol/
 cp -R /home/runner/openwrt-package/package/chinadns-ng/ /home/runner/openwrt/package/lienol/
+cp -R /home/runner/openwrt-package/package/v2ray/ /home/runner/openwrt/package/lean/
 
 echo 'Update luci-theme-argon'
 rm -rf /home/runner/openwrt/package/lean/luci-theme-argon/
 cp -R /home/runner/luci-theme-argon/ /home/runner/openwrt/package/lean/
+
+echo 'Update unblockNeteaseMusic'
+sed -i 's/ee9d883b968b78842ab626f4f8051b40d4e7ff47/e0050253c94d4ece6a2a15af07188d597896d2d6/g' /home/runner/openwrt/package/lean/UnblockNeteaseMusic/Makefile
 
 echo 'Add luci-app-vssr'
 rm -rf /home/runner/openwrt/package/ctcgfw/luci-app-vssr/
