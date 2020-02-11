@@ -1,2 +1,2 @@
 # openwrt-ci
-Auto build openwrt
+Auto build personalized openwrt firmware
