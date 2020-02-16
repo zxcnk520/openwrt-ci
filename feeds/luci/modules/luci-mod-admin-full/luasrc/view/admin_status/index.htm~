@@ -110,7 +110,7 @@
 
 <%+header%>
 
-<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
+<script type="text/javascript" src="<%=resource%>/cbi.js?v=git-19.299.52050-0b735ea"></script>
 <script type="text/javascript">//<![CDATA[
         function progressbar(v, m)
         {
