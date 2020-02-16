@@ -28,3 +28,10 @@ sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" /home/runner/openwrt/feeds/lu
 
 echo 'Fix koolproxyR bug'
 sed -i "s/\$(ARCH),arm/\$(ARCH),aarch64/g" /home/runner/openwrt/package/ctcgfw/luci-app-koolproxyR/Makefile
+
+echo 'Install po2lmo'
+rm -rf /home/runner/openwrt/package/ctcgfw/luci-app-openclash
+git clone https://github.com/vernesong/OpenClash.git /home/runner/openwrt/package/ctcgfw/luci-app-openclash/
+pushd /home/runner/openwrt/package/ctcgfw/luci-app-openclash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
