@@ -14,7 +14,7 @@ rm -rf /home/runner/openwrt/package/lean/luci-theme-argon/
 cp -R /home/runner/luci-theme-argon/ /home/runner/openwrt/package/lean/
 
 echo 'Update unblockNeteaseMusic'
-sed -i 's/586d043806ed8885319d9fcb4806cd05dfa71f09/436046c63b1d985c62e6695beaa21672423a747a/g' /home/runner/openwrt/package/lean/UnblockNeteaseMusic/Makefile
+sed -i 's/436046c63b1d985c62e6695beaa21672423a747a/0bc075540bca3c41bb6243cecdb5fc8a7c13a986/g' /home/runner/openwrt/package/lean/UnblockNeteaseMusic/Makefile
 
 echo 'Add luci-app-vssr'
 rm -rf /home/runner/openwrt/package/ctcgfw/luci-app-vssr/
