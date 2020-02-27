@@ -28,7 +28,7 @@ jobs:
         sudo -E apt-get remove -y --purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
         sudo -E apt-get update -y
         sudo -E apt-get full-upgrade -y
-        sudo -E apt-get install -y build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-8 gcc++-8 gcc-8-multilib g++-8-multilib p7zip p7zip-full msmtp libssl-dev texinfo libreadline-dev libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint ccache curl wget vim nano python python3 python-pip python3-pip python-ply python3-ply haveged lrzsz device-tree-compiler
+        sudo -E apt-get install -y build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-8 gcc++-8 gcc-8-multilib g++-8-multilib p7zip p7zip-full msmtp libssl-dev texinfo libreadline-dev libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint ccache curl wget vim nano python python3.5 python-pip python3-pip python-ply python3-ply haveged lrzsz device-tree-compiler
         sudo -E apt-get autoremove -y --purge
         sudo -E apt-get clean -y
         # 利用挂载在 /mnt/ 的 14G 额外空间:
@@ -49,7 +49,6 @@ jobs:
         git clone https://github.com/Lienol/openwrt-package.git
         git clone https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/jerrykuku/luci-app-vssr.git
-        # git clone https://github.com/Flowers-in-thorns/luci-app-vssr.git
         sudo chown -R runner:runner openwrt openwrt-package luci-app-vssr luci-theme-argon
         cd /home/runner/openwrt
         ./scripts/feeds update -a
